@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/table'
 import { Header } from '@/components/header'
 import { Tabs } from '@/components/tabs'
+import { Pagination } from '@/components/pagination'
 
 export function App() {
   return (
@@ -74,6 +75,8 @@ export function App() {
             })}
           </TableBody>
         </Table>
+
+        <Pagination />
       </main>
     </div>
   )
