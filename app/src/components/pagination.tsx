@@ -11,6 +11,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from '@/components/ui/select'
 
 export function Pagination() {
@@ -22,7 +23,9 @@ export function Pagination() {
           <span>Rows per page</span>
 
           <Select defaultValue="10">
-            <SelectTrigger aria-label="Page" />
+            <SelectTrigger className="w-16">
+              <SelectValue placeholder="Page" />
+            </SelectTrigger>
             <SelectContent>
               <SelectItem value="10">10</SelectItem>
               <SelectItem value="20">20</SelectItem>
