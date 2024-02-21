@@ -1,4 +1,13 @@
-import { FileDown, MoreHorizontal, Plus, Search } from 'lucide-react'
+import { FormEvent, useState } from 'react'
+import {
+  FileDownIcon,
+  FilterIcon,
+  MoreHorizontalIcon,
+  PlusIcon,
+  SearchIcon,
+} from 'lucide-react'
+import { useQuery, keepPreviousData } from '@tanstack/react-query'
+import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 import { Control, Input } from '@/components/ui/input'
@@ -13,8 +22,54 @@ import {
 import { Header } from '@/components/header'
 import { Tabs } from '@/components/tabs'
 import { Pagination } from '@/components/pagination'
+import { TagResponse } from '@/types/tag'
 
 export function App() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const urlFilter = searchParams.get('filter') ?? ''
+
+  const [filter, setFilter] = useState(urlFilter)
+
+  const page = searchParams.get('page') ? Number(searchParams.get('page')) : 1
+  const perPage = searchParams.get('per_page')
+    ? Number(searchParams.get('per_page'))
+    : 10
+
+  const { data: tags, isLoading } = useQuery<TagResponse>({
+    queryKey: ['get-tags', urlFilter, page],
+    queryFn: async () => {
+      const response = await fetch(
+        `http://localhost:3333/tags?_page=${page}&_per_page=${perPage}&title=${urlFilter}`,
+      )
+      const data = await response.json()
+
+      // Delay 1s
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      return data
+    },
+    placeholderData: keepPreviousData,
+  })
+
+  function handleFilter(event: FormEvent) {
+    event.preventDefault()
+
+    if (!filter) {
+      return
+    }
+
+    setSearchParams((params) => {
+      params.set('page', '1')
+      params.set('filter', filter)
+
+      return params
+    })
+  }
+
+  if (isLoading) {
+    return null
+  }
+
   return (
     <div className="py-10 space-y-8">
       <div>
@@ -26,19 +81,29 @@ export function App() {
         <div className="flex items-center gap-3">
           <h1 className="text-xl font-bold">Tags</h1>
           <Button variant="primary">
-            <Plus className="size-3" />
+            <PlusIcon className="size-3" />
             Create tag
           </Button>
         </div>
 
         <div className="flex items-center justify-between">
-          <Input variant="filter">
-            <Search className="size-4" />
-            <Control placeholder="Search tags" />
-          </Input>
+          <form onSubmit={handleFilter} className="flex items-center gap-2">
+            <Input variant="filter">
+              <SearchIcon className="size-4" />
+              <Control
+                placeholder="Search tags"
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+              />
+            </Input>
+
+            <Button variant="secondary">
+              <FilterIcon className="size-4" /> Filter
+            </Button>
+          </form>
 
           <Button variant="secondary">
-            <FileDown className="size-4" /> Export
+            <FileDownIcon className="size-4" /> Export
           </Button>
         </div>
 
@@ -52,22 +117,22 @@ export function App() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {Array.from({ length: 10 }).map((_, index) => {
+            {tags?.data.map((tag) => {
               return (
-                <TableRow key={index}>
+                <TableRow key={tag.id}>
                   <TableCell></TableCell>
                   <TableCell>
                     <div className="grid gap-0.5">
-                      <span className="font-medium">React</span>
-                      <span className="text-sm text-zinc-500">
-                        lajdofajsdfaksdjflakdf
-                      </span>
+                      <span className="font-medium">{tag.title}</span>
+                      <span className="text-sm text-zinc-500">{tag.id}</span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-zinc-500">15 video(s)</TableCell>
+                  <TableCell className="text-zinc-500">
+                    {tag.amountOfVideos} video(s)
+                  </TableCell>
                   <TableCell className="text-right">
                     <Button variant="secondary" size="icon">
-                      <MoreHorizontal className="size-4" />
+                      <MoreHorizontalIcon className="size-4" />
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -76,7 +141,9 @@ export function App() {
           </TableBody>
         </Table>
 
-        <Pagination />
+        {tags && (
+          <Pagination pages={tags.pages} items={tags.items} page={page} />
+        )}
       </main>
     </div>
   )
