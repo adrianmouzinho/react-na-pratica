@@ -4,13 +4,12 @@ import {
   SlidersIcon,
   MoreHorizontalIcon,
   PlusIcon,
-  SearchIcon,
 } from 'lucide-react'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
 import { useSearchParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
-import { Control, Input } from '@/components/ui/input'
+import { Input } from '@/components/ui/input'
 import {
   Table,
   TableBody,
@@ -84,23 +83,20 @@ export function App() {
           </Button>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <form onSubmit={handleFilter} className="flex items-center gap-2">
-            <Input variant="filter">
-              <SearchIcon className="size-4" />
-              <Control
-                placeholder="Search tags"
-                value={filter}
-                onChange={(e) => setFilter(e.target.value)}
-              />
-            </Input>
+            <Input
+              placeholder="Search tags"
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            />
 
             <Button variant="secondary">
               <SlidersIcon className="size-4" /> Filter
             </Button>
           </form>
 
-          <Button variant="secondary">
+          <Button variant="secondary" className="w-fit ml-auto">
             <FileDownIcon className="size-4" /> Export
           </Button>
         </div>

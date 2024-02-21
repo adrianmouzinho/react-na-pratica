@@ -88,11 +88,12 @@ export function Pagination({
   }
 
   return (
-    <div className="flex text-sm items-center justify-between text-zinc-500">
+    <div className="flex flex-col md:flex-row text-sm items-center gap-4 md:justify-between text-zinc-500">
       <span>
         Showing {itemsOnPage} of {items} items
       </span>
-      <div className="flex items-center gap-8">
+
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
         <div className="flex items-center gap-2">
           <span>Rows per page</span>
 

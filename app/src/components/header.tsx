@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 export function Header() {
   return (
     <header className="max-w-[1248px] mx-auto flex items-center justify-between px-6">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 flex-wrap">
         <div className="flex items-center gap-2.5">
           <img src={nivoLogo} alt="nivo.video" />
 
@@ -42,7 +42,7 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="hidden md:flex items-center gap-3">
         <div className="flex flex-col items-end gap-0.5">
           <span className="text-sm font-medium">Diego Fernandes</span>
           <span className="text-xs text-zinc-400">diego@nivo.video</span>

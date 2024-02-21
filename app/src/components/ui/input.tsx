@@ -1,45 +1,25 @@
-import { ComponentProps, createContext, ReactNode, useContext } from 'react'
-import { tv, type VariantProps } from 'tailwind-variants'
+import * as React from 'react'
 
-const input = tv({
-  slots: {
-    root: 'border border-zinc-700 bg-zinc-800/50',
-    control: 'placeholder-zinc-500 text-zinc-100',
+import { cn } from '@/lib/utils'
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          'flex h-7 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
   },
-  variants: {
-    variant: {
-      default: {},
-      filter: {
-        root: 'rounded-full py-1.5 px-3 flex items-center gap-1.5 text-xs text-zinc-500 leading-tight border-dashed focus-within:border-zinc-600',
-        control: 'bg-transparent flex-1 outline-none',
-      },
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-})
+)
+Input.displayName = 'Input'
 
-const inputContext = createContext({} as VariantProps<typeof input>)
-
-export function Input({
-  children,
-  variant,
-}: { children: ReactNode } & VariantProps<typeof input>) {
-  const { root } = input({ variant })
-
-  return (
-    <inputContext.Provider value={{ variant }}>
-      <div className={root()}>{children}</div>
-    </inputContext.Provider>
-  )
-}
-
-export interface ControlProps extends ComponentProps<'input'> {}
-
-export function Control({ className, ...props }: ControlProps) {
-  const { variant } = useContext(inputContext)
-  const { control } = input({ variant })
-
-  return <input className={control({ className })} {...props} />
-}
+export { Input }
