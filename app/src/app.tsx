@@ -59,10 +59,6 @@ export function App() {
     })
   }
 
-  if (isLoading) {
-    return null
-  }
-
   return (
     <div className="py-10 space-y-8">
       <div>
@@ -97,39 +93,43 @@ export function App() {
           </Button>
         </div>
 
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead></TableHead>
-              <TableHead>Tag</TableHead>
-              <TableHead>Amount of videos</TableHead>
-              <TableHead></TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {tags?.data.map((tag) => {
-              return (
-                <TableRow key={tag.id}>
-                  <TableCell></TableCell>
-                  <TableCell>
-                    <div className="grid gap-0.5">
-                      <span className="font-medium">{tag.title}</span>
-                      <span className="text-sm text-zinc-500">{tag.id}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell className="text-zinc-500">
-                    {tag.amountOfVideos} video(s)
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <Button variant="secondary" size="icon">
-                      <MoreHorizontalIcon className="size-4" />
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              )
-            })}
-          </TableBody>
-        </Table>
+        {!isLoading ? (
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead></TableHead>
+                <TableHead>Tag</TableHead>
+                <TableHead>Amount of videos</TableHead>
+                <TableHead></TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {tags?.data.map((tag) => {
+                return (
+                  <TableRow key={tag.id}>
+                    <TableCell></TableCell>
+                    <TableCell>
+                      <div className="grid gap-0.5">
+                        <span className="font-medium">{tag.title}</span>
+                        <span className="text-sm text-zinc-500">{tag.id}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-zinc-500">
+                      {tag.amountOfVideos} video(s)
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Button variant="secondary" size="icon">
+                        <MoreHorizontalIcon className="size-4" />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                )
+              })}
+            </TableBody>
+          </Table>
+        ) : (
+          <p className="text-center">Carregando tags...</p>
+        )}
 
         {tags && (
           <Pagination
