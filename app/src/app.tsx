@@ -51,10 +51,6 @@ export function App() {
   function handleFilter(event: FormEvent) {
     event.preventDefault()
 
-    if (!filter) {
-      return
-    }
-
     setSearchParams((params) => {
       params.set('page', '1')
       params.set('filter', filter)
