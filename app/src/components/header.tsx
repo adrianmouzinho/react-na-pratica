@@ -1,7 +1,8 @@
 import { ChevronDown, Slash } from 'lucide-react'
 
-import nivoLogo from '@/assets/logo-nivo.svg'
 import { Badge } from '@/components/ui/badge'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import nivoLogo from '@/assets/logo-nivo.svg'
 
 export function Header() {
   return (
@@ -44,14 +45,16 @@ export function Header() {
 
       <div className="hidden md:flex items-center gap-3">
         <div className="flex flex-col items-end gap-0.5">
-          <span className="text-sm font-medium">Diego Fernandes</span>
-          <span className="text-xs text-zinc-400">diego@nivo.video</span>
+          <span className="text-sm font-medium">Adrian Mouzinho</span>
+          <span className="text-xs text-zinc-400">adrian@nivo.video</span>
         </div>
-        <img
-          src="https://github.com/diego3g.png"
-          className="size-8 rounded-full"
-          alt=""
-        />
+        <Avatar>
+          <AvatarImage
+            src="https://github.com/adrianmouzinho.png"
+            alt="@adrianmouzinho"
+          />
+          <AvatarFallback>AM</AvatarFallback>
+        </Avatar>
         <ChevronDown className="size-4 text-zinc-600" />
       </div>
     </header>
