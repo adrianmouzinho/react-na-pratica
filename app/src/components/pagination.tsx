@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
 } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
 
@@ -19,10 +20,19 @@ interface PaginationProps {
   pages: number
   items: number
   page: number
+  itemsPerPage: string
+  itemsOnPage: number
 }
 
-export function Pagination({ items, page, pages }: PaginationProps) {
+export function Pagination({
+  items,
+  page,
+  pages,
+  itemsPerPage,
+  itemsOnPage,
+}: PaginationProps) {
   const [, setSearchParams] = useSearchParams()
+  const [limit, setLimit] = useState(itemsPerPage)
 
   const isFirstPage = page - 1 <= 0
   const isLastPage = page + 1 > pages
@@ -67,14 +77,26 @@ export function Pagination({ items, page, pages }: PaginationProps) {
     })
   }
 
+  function handleSelectChange(value: string) {
+    setSearchParams((params) => {
+      params.set('per_page', value)
+
+      return params
+    })
+
+    setLimit(value)
+  }
+
   return (
     <div className="flex text-sm items-center justify-between text-zinc-500">
-      <span>Showing 10 of {items} items</span>
+      <span>
+        Showing {itemsOnPage} of {items} items
+      </span>
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">
           <span>Rows per page</span>
 
-          <Select defaultValue="10">
+          <Select value={limit} onValueChange={handleSelectChange}>
             <SelectTrigger className="w-16">
               <SelectValue placeholder="Page" />
             </SelectTrigger>
@@ -96,7 +118,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
             size="icon"
             disabled={isFirstPage}
           >
-            <ChevronsLeft className="size-4" />
+            <ChevronsLeftIcon className="size-4" />
             <span className="sr-only">First page</span>
           </Button>
           <Button
@@ -105,7 +127,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
             size="icon"
             disabled={isFirstPage}
           >
-            <ChevronLeft className="size-4" />
+            <ChevronLeftIcon className="size-4" />
             <span className="sr-only">Previous page</span>
           </Button>
           <Button
@@ -114,7 +136,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
             size="icon"
             disabled={isLastPage}
           >
-            <ChevronRight className="size-4" />
+            <ChevronRightIcon className="size-4" />
             <span className="sr-only">Next page</span>
           </Button>
           <Button
@@ -123,7 +145,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
             size="icon"
             disabled={isLastPage}
           >
-            <ChevronsRight className="size-4" />
+            <ChevronsRightIcon className="size-4" />
             <span className="sr-only">Last page</span>
           </Button>
         </div>

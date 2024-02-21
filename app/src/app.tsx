@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react'
 import {
   FileDownIcon,
-  FilterIcon,
+  SlidersIcon,
   MoreHorizontalIcon,
   PlusIcon,
   SearchIcon,
@@ -31,15 +31,13 @@ export function App() {
   const [filter, setFilter] = useState(urlFilter)
 
   const page = searchParams.get('page') ? Number(searchParams.get('page')) : 1
-  const perPage = searchParams.get('per_page')
-    ? Number(searchParams.get('per_page'))
-    : 10
+  const itemsPerPage = searchParams.get('per_page') ?? '10'
 
   const { data: tags, isLoading } = useQuery<TagResponse>({
-    queryKey: ['get-tags', urlFilter, page],
+    queryKey: ['get-tags', urlFilter, page, itemsPerPage],
     queryFn: async () => {
       const response = await fetch(
-        `http://localhost:3333/tags?_page=${page}&_per_page=${perPage}&title=${urlFilter}`,
+        `http://localhost:3333/tags?_page=${page}&_per_page=${itemsPerPage}&title=${urlFilter}`,
       )
       const data = await response.json()
 
@@ -98,7 +96,7 @@ export function App() {
             </Input>
 
             <Button variant="secondary">
-              <FilterIcon className="size-4" /> Filter
+              <SlidersIcon className="size-4" /> Filter
             </Button>
           </form>
 
@@ -142,7 +140,13 @@ export function App() {
         </Table>
 
         {tags && (
-          <Pagination pages={tags.pages} items={tags.items} page={page} />
+          <Pagination
+            pages={tags.pages}
+            items={tags.items}
+            page={page}
+            itemsPerPage={itemsPerPage}
+            itemsOnPage={tags.data.length}
+          />
         )}
       </main>
     </div>
