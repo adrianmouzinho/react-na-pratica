@@ -7,11 +7,13 @@ import { SheetClose, SheetFooter } from '@/components/ui/sheet'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { useToast } from '@/components/ui/use-toast'
 import { CreateTagSchema, createTagSchema } from '@/schemas/tag'
 import { getSlugFromString } from '@/utils/get-slug-from-string'
 
 export function CreateTagForm() {
   const queryClient = useQueryClient()
+  const { toast } = useToast()
 
   const {
     register,
@@ -50,6 +52,10 @@ export function CreateTagForm() {
 
   async function handleCreateTag({ title }: CreateTagSchema) {
     await mutateAsync({ title })
+
+    toast({
+      title: 'Created tag successfully!',
+    })
   }
 
   return (
