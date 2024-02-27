@@ -1,106 +1,622 @@
 {
   "tags": [
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "Vue", "amountOfVideos": 20 },
-    { "title": "Angular", "amountOfVideos": 10 },
-    { "title": "Python", "amountOfVideos": 30 },
-    { "title": "Java", "amountOfVideos": 25 },
-    { "title": "JavaScript", "amountOfVideos": 15 },
-    { "title": "HTML", "amountOfVideos": 5 },
-    { "title": "CSS", "amountOfVideos": 8 },
-    { "title": "Node.js", "amountOfVideos": 18 },
-    { "title": "Express.js", "amountOfVideos": 12 },
-    { "title": "MongoDB", "amountOfVideos": 22 },
-    { "title": "MySQL", "amountOfVideos": 17 },
-    { "title": "PostgreSQL", "amountOfVideos": 13 },
-    { "title": "Docker", "amountOfVideos": 9 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "Kubernetes", "amountOfVideos": 11 },
-    { "title": "Git", "amountOfVideos": 14 },
-    { "title": "GitHub", "amountOfVideos": 16 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "Bitbucket", "amountOfVideos": 19 },
-    { "title": "Jira", "amountOfVideos": 21 },
-    { "title": "Confluence", "amountOfVideos": 23 },
-    { "title": "Slack", "amountOfVideos": 24 },
-    { "title": "Microsoft Teams", "amountOfVideos": 26 },
-    { "title": "Zoom", "amountOfVideos": 27 },
-    { "title": "Google Meet", "amountOfVideos": 28 },
-    { "title": "Skype", "amountOfVideos": 29 },
-    { "title": "Trello", "amountOfVideos": 31 },
-    { "title": "Asana", "amountOfVideos": 32 },
-    { "title": "VS Code", "amountOfVideos": 33 },
-    { "title": "Sublime Text", "amountOfVideos": 34 },
-    { "title": "Atom", "amountOfVideos": 35 },
-    { "title": "Eclipse", "amountOfVideos": 36 },
-    { "title": "IntelliJ IDEA", "amountOfVideos": 37 },
-    { "title": "PyCharm", "amountOfVideos": 38 },
-    { "title": "Visual Studio", "amountOfVideos": 39 },
-    { "title": "Xcode", "amountOfVideos": 40 },
-    { "title": "Android Studio", "amountOfVideos": 41 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "Unity", "amountOfVideos": 42 },
-    { "title": "Unreal Engine", "amountOfVideos": 43 },
-    { "title": "Blender", "amountOfVideos": 44 },
-    { "title": "Maya", "amountOfVideos": 45 },
-    { "title": "3ds Max", "amountOfVideos": 46 },
-    { "title": "Photoshop", "amountOfVideos": 47 },
-    { "title": "Illustrator", "amountOfVideos": 48 },
-    { "title": "InDesign", "amountOfVideos": 49 },
-    { "title": "Premiere Pro", "amountOfVideos": 50 },
-    { "title": "After Effects", "amountOfVideos": 51 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "Final Cut Pro", "amountOfVideos": 52 },
-    { "title": "DaVinci Resolve", "amountOfVideos": 53 },
-    { "title": "Logic Pro", "amountOfVideos": 54 },
-    { "title": "Pro Tools", "amountOfVideos": 55 },
-    { "title": "Ableton Live", "amountOfVideos": 56 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "React", "amountOfVideos": 7 },
-    { "title": "FL Studio", "amountOfVideos": 57 },
-    { "title": "GarageBand", "amountOfVideos": 58 },
-    { "title": "Cinema 4D", "amountOfVideos": 59 },
-    { "title": "ZBrush", "amountOfVideos": 60 },
-    { "title": "Houdini", "amountOfVideos": 61 },
-    { "title": "Audacity", "amountOfVideos": 62 },
-    { "title": "GIMP", "amountOfVideos": 63 },
-    { "title": "Inkscape", "amountOfVideos": 64 },
-    { "title": "Unity", "amountOfVideos": 65 },
-    { "title": "Unreal Engine", "amountOfVideos": 66 },
-    { "title": "Blender", "amountOfVideos": 67 },
-    { "title": "Maya", "amountOfVideos": 68 },
-    { "title": "3ds Max", "amountOfVideos": 69 },
-    { "title": "Photoshop", "amountOfVideos": 70 },
-    { "title": "Illustrator", "amountOfVideos": 71 },
-    { "title": "InDesign", "amountOfVideos": 72 },
-    { "title": "Premiere Pro", "amountOfVideos": 73 },
-    { "title": "After Effects", "amountOfVideos": 74 },
-    { "title": "Final Cut Pro", "amountOfVideos": 75 },
-    { "title": "DaVinci Resolve", "amountOfVideos": 76 },
-    { "title": "Logic Pro", "amountOfVideos": 77 },
-    { "title": "Pro Tools", "amountOfVideos": 78 },
-    { "title": "Ableton Live", "amountOfVideos": 79 },
-    { "title": "FL Studio", "amountOfVideos": 80 },
-    { "title": "GarageBand", "amountOfVideos": 81 },
-    { "title": "Cinema 4D", "amountOfVideos": 82 },
-    { "title": "ZBrush", "amountOfVideos": 83 },
-    { "title": "Houdini", "amountOfVideos": 84 },
-    { "title": "Audacity", "amountOfVideos": 85 },
-    { "title": "GIMP", "amountOfVideos": 86 },
-    { "title": "Inkscape", "amountOfVideos": 87 },
-    { "title": "Unity", "amountOfVideos": 88 },
-    { "title": "Unreal Engine", "amountOfVideos": 89 },
-    { "title": "Blender", "amountOfVideos": 90 },
-    { "title": "Maya", "amountOfVideos": 91 },
-    { "title": "3ds Max", "amountOfVideos": 12 }
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "f1f2"
+    },
+    {
+      "title": "Vue",
+      "slug": "old",
+      "amountOfVideos": 20,
+      "id": "cc24"
+    },
+    {
+      "title": "Angular",
+      "slug": "old",
+      "amountOfVideos": 10,
+      "id": "2acd"
+    },
+    {
+      "title": "Python",
+      "slug": "old",
+      "amountOfVideos": 30,
+      "id": "ff6d"
+    },
+    {
+      "title": "Java",
+      "slug": "old",
+      "amountOfVideos": 25,
+      "id": "c6fa"
+    },
+    {
+      "title": "JavaScript",
+      "slug": "old",
+      "amountOfVideos": 15,
+      "id": "04ee"
+    },
+    {
+      "title": "HTML",
+      "slug": "old",
+      "amountOfVideos": 5,
+      "id": "ba94"
+    },
+    {
+      "title": "CSS",
+      "slug": "old",
+      "amountOfVideos": 8,
+      "id": "e62e"
+    },
+    {
+      "title": "Node.js",
+      "slug": "old",
+      "amountOfVideos": 18,
+      "id": "a67a"
+    },
+    {
+      "title": "Express.js",
+      "slug": "old",
+      "amountOfVideos": 12,
+      "id": "1882"
+    },
+    {
+      "title": "MongoDB",
+      "slug": "old",
+      "amountOfVideos": 22,
+      "id": "c256"
+    },
+    {
+      "title": "MySQL",
+      "slug": "old",
+      "amountOfVideos": 17,
+      "id": "56cf"
+    },
+    {
+      "title": "PostgreSQL",
+      "slug": "old",
+      "amountOfVideos": 13,
+      "id": "dd39"
+    },
+    {
+      "title": "Docker",
+      "slug": "old",
+      "amountOfVideos": 9,
+      "id": "0c05"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "af87"
+    },
+    {
+      "title": "Kubernetes",
+      "slug": "old",
+      "amountOfVideos": 11,
+      "id": "97c8"
+    },
+    {
+      "title": "Git",
+      "slug": "old",
+      "amountOfVideos": 14,
+      "id": "73b6"
+    },
+    {
+      "title": "GitHub",
+      "slug": "old",
+      "amountOfVideos": 16,
+      "id": "6adf"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "7af6"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "0edb"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "650e"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "28a5"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "25fd"
+    },
+    {
+      "title": "Bitbucket",
+      "slug": "old",
+      "amountOfVideos": 19,
+      "id": "37e6"
+    },
+    {
+      "title": "Jira",
+      "slug": "old",
+      "amountOfVideos": 21,
+      "id": "ee14"
+    },
+    {
+      "title": "Confluence",
+      "slug": "old",
+      "amountOfVideos": 23,
+      "id": "31f3"
+    },
+    {
+      "title": "Slack",
+      "slug": "old",
+      "amountOfVideos": 24,
+      "id": "3226"
+    },
+    {
+      "title": "Microsoft Teams",
+      "slug": "old",
+      "amountOfVideos": 26,
+      "id": "5e61"
+    },
+    {
+      "title": "Zoom",
+      "slug": "old",
+      "amountOfVideos": 27,
+      "id": "df58"
+    },
+    {
+      "title": "Google Meet",
+      "slug": "old",
+      "amountOfVideos": 28,
+      "id": "fff6"
+    },
+    {
+      "title": "Skype",
+      "slug": "old",
+      "amountOfVideos": 29,
+      "id": "f185"
+    },
+    {
+      "title": "Trello",
+      "slug": "old",
+      "amountOfVideos": 31,
+      "id": "0e71"
+    },
+    {
+      "title": "Asana",
+      "slug": "old",
+      "amountOfVideos": 32,
+      "id": "7775"
+    },
+    {
+      "title": "VS Code",
+      "slug": "old",
+      "amountOfVideos": 33,
+      "id": "4b5b"
+    },
+    {
+      "title": "Sublime Text",
+      "slug": "old",
+      "amountOfVideos": 34,
+      "id": "d7c2"
+    },
+    {
+      "title": "Atom",
+      "slug": "old",
+      "amountOfVideos": 35,
+      "id": "68b1"
+    },
+    {
+      "title": "Eclipse",
+      "slug": "old",
+      "amountOfVideos": 36,
+      "id": "afe2"
+    },
+    {
+      "title": "IntelliJ IDEA",
+      "slug": "old",
+      "amountOfVideos": 37,
+      "id": "3adc"
+    },
+    {
+      "title": "PyCharm",
+      "slug": "old",
+      "amountOfVideos": 38,
+      "id": "07fd"
+    },
+    {
+      "title": "Visual Studio",
+      "slug": "old",
+      "amountOfVideos": 39,
+      "id": "18a2"
+    },
+    {
+      "title": "Xcode",
+      "slug": "old",
+      "amountOfVideos": 40,
+      "id": "6290"
+    },
+    {
+      "title": "Android Studio",
+      "slug": "old",
+      "amountOfVideos": 41,
+      "id": "6d3d"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "314a"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "1fde"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "1110"
+    },
+    {
+      "title": "Unity",
+      "slug": "old",
+      "amountOfVideos": 42,
+      "id": "911d"
+    },
+    {
+      "title": "Unreal Engine",
+      "slug": "old",
+      "amountOfVideos": 43,
+      "id": "108a"
+    },
+    {
+      "title": "Blender",
+      "slug": "old",
+      "amountOfVideos": 44,
+      "id": "248e"
+    },
+    {
+      "title": "Maya",
+      "slug": "old",
+      "amountOfVideos": 45,
+      "id": "076f"
+    },
+    {
+      "title": "3ds Max",
+      "slug": "old",
+      "amountOfVideos": 46,
+      "id": "af51"
+    },
+    {
+      "title": "Photoshop",
+      "slug": "old",
+      "amountOfVideos": 47,
+      "id": "ad61"
+    },
+    {
+      "title": "Illustrator",
+      "slug": "old",
+      "amountOfVideos": 48,
+      "id": "51a5"
+    },
+    {
+      "title": "InDesign",
+      "slug": "old",
+      "amountOfVideos": 49,
+      "id": "631c"
+    },
+    {
+      "title": "Premiere Pro",
+      "slug": "old",
+      "amountOfVideos": 50,
+      "id": "a11c"
+    },
+    {
+      "title": "After Effects",
+      "slug": "old",
+      "amountOfVideos": 51,
+      "id": "9e6a"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "b7e8"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "a41d"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "bde6"
+    },
+    {
+      "title": "Final Cut Pro",
+      "slug": "old",
+      "amountOfVideos": 52,
+      "id": "97a3"
+    },
+    {
+      "title": "DaVinci Resolve",
+      "slug": "old",
+      "amountOfVideos": 53,
+      "id": "03ca"
+    },
+    {
+      "title": "Logic Pro",
+      "slug": "old",
+      "amountOfVideos": 54,
+      "id": "ee76"
+    },
+    {
+      "title": "Pro Tools",
+      "slug": "old",
+      "amountOfVideos": 55,
+      "id": "1bf0"
+    },
+    {
+      "title": "Ableton Live",
+      "slug": "old",
+      "amountOfVideos": 56,
+      "id": "3963"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "3d1e"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "4a09"
+    },
+    {
+      "title": "React",
+      "slug": "old",
+      "amountOfVideos": 7,
+      "id": "6a01"
+    },
+    {
+      "title": "FL Studio",
+      "slug": "old",
+      "amountOfVideos": 57,
+      "id": "8270"
+    },
+    {
+      "title": "GarageBand",
+      "slug": "old",
+      "amountOfVideos": 58,
+      "id": "bbb7"
+    },
+    {
+      "title": "Cinema 4D",
+      "slug": "old",
+      "amountOfVideos": 59,
+      "id": "fbe1"
+    },
+    {
+      "title": "ZBrush",
+      "slug": "old",
+      "amountOfVideos": 60,
+      "id": "d919"
+    },
+    {
+      "title": "Houdini",
+      "slug": "old",
+      "amountOfVideos": 61,
+      "id": "054b"
+    },
+    {
+      "title": "Audacity",
+      "slug": "old",
+      "amountOfVideos": 62,
+      "id": "f508"
+    },
+    {
+      "title": "GIMP",
+      "slug": "old",
+      "amountOfVideos": 63,
+      "id": "d51f"
+    },
+    {
+      "title": "Inkscape",
+      "slug": "old",
+      "amountOfVideos": 64,
+      "id": "9227"
+    },
+    {
+      "title": "Unity",
+      "slug": "old",
+      "amountOfVideos": 65,
+      "id": "192e"
+    },
+    {
+      "title": "Unreal Engine",
+      "slug": "old",
+      "amountOfVideos": 66,
+      "id": "a073"
+    },
+    {
+      "title": "Blender",
+      "slug": "old",
+      "amountOfVideos": 67,
+      "id": "6a9a"
+    },
+    {
+      "title": "Maya",
+      "slug": "old",
+      "amountOfVideos": 68,
+      "id": "c414"
+    },
+    {
+      "title": "3ds Max",
+      "slug": "old",
+      "amountOfVideos": 69,
+      "id": "3213"
+    },
+    {
+      "title": "Photoshop",
+      "slug": "old",
+      "amountOfVideos": 70,
+      "id": "8b9c"
+    },
+    {
+      "title": "Illustrator",
+      "slug": "old",
+      "amountOfVideos": 71,
+      "id": "63ef"
+    },
+    {
+      "title": "InDesign",
+      "slug": "old",
+      "amountOfVideos": 72,
+      "id": "55c2"
+    },
+    {
+      "title": "Premiere Pro",
+      "slug": "old",
+      "amountOfVideos": 73,
+      "id": "dc2b"
+    },
+    {
+      "title": "After Effects",
+      "slug": "old",
+      "amountOfVideos": 74,
+      "id": "66ad"
+    },
+    {
+      "title": "Final Cut Pro",
+      "slug": "old",
+      "amountOfVideos": 75,
+      "id": "b3a6"
+    },
+    {
+      "title": "DaVinci Resolve",
+      "slug": "old",
+      "amountOfVideos": 76,
+      "id": "b0a4"
+    },
+    {
+      "title": "Logic Pro",
+      "slug": "old",
+      "amountOfVideos": 77,
+      "id": "f7da"
+    },
+    {
+      "title": "Pro Tools",
+      "slug": "old",
+      "amountOfVideos": 78,
+      "id": "08b1"
+    },
+    {
+      "title": "Ableton Live",
+      "slug": "old",
+      "amountOfVideos": 79,
+      "id": "a880"
+    },
+    {
+      "title": "FL Studio",
+      "slug": "old",
+      "amountOfVideos": 80,
+      "id": "0e5e"
+    },
+    {
+      "title": "GarageBand",
+      "slug": "old",
+      "amountOfVideos": 81,
+      "id": "092e"
+    },
+    {
+      "title": "Cinema 4D",
+      "slug": "old",
+      "amountOfVideos": 82,
+      "id": "3d8c"
+    },
+    {
+      "title": "ZBrush",
+      "slug": "old",
+      "amountOfVideos": 83,
+      "id": "8eb9"
+    },
+    {
+      "title": "Houdini",
+      "slug": "old",
+      "amountOfVideos": 84,
+      "id": "e3f1"
+    },
+    {
+      "title": "Audacity",
+      "slug": "old",
+      "amountOfVideos": 85,
+      "id": "8e54"
+    },
+    {
+      "title": "GIMP",
+      "slug": "old",
+      "amountOfVideos": 86,
+      "id": "3fe9"
+    },
+    {
+      "title": "Inkscape",
+      "slug": "old",
+      "amountOfVideos": 87,
+      "id": "3a27"
+    },
+    {
+      "title": "Unity",
+      "slug": "old",
+      "amountOfVideos": 88,
+      "id": "5216"
+    },
+    {
+      "title": "Unreal Engine",
+      "slug": "old",
+      "amountOfVideos": 89,
+      "id": "d85d"
+    },
+    {
+      "title": "Blender",
+      "slug": "old",
+      "amountOfVideos": 90,
+      "id": "f20a"
+    },
+    {
+      "title": "Maya",
+      "slug": "old",
+      "amountOfVideos": 91,
+      "id": "dcda"
+    },
+    {
+      "id": "4059",
+      "title": "deve aparecer na lista",
+      "slug": "deve-aparecer-na-lista",
+      "amountOfVideos": 0
+    },
+    {
+      "id": "dfa3",
+      "title": "outro",
+      "slug": "outro",
+      "amountOfVideos": 0
+    }
   ]
 }

@@ -18,10 +18,19 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { Header } from '@/components/header'
 import { Tabs } from '@/components/tabs'
 import { Pagination } from '@/components/pagination'
 import { TagResponse } from '@/types/tag'
+import { CreateTagForm } from '@/components/create-tag-form'
 
 export function App() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -69,15 +78,31 @@ export function App() {
       <main className="max-w-[1248px] mx-auto space-y-5 px-6">
         <div className="flex items-center gap-3">
           <h1 className="text-xl font-bold">Tags</h1>
-          <Button variant="primary">
-            <PlusIcon className="size-3" />
-            Create tag
-          </Button>
+
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="primary">
+                <PlusIcon className="size-3" />
+                Create tag
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Create tag</SheetTitle>
+                <SheetDescription>
+                  Tags can be used to group videos about similar concepts
+                </SheetDescription>
+              </SheetHeader>
+
+              <CreateTagForm />
+            </SheetContent>
+          </Sheet>
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <form onSubmit={handleFilter} className="flex items-center gap-2">
             <Input
+              className="h-7"
               placeholder="Search tags"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
@@ -111,10 +136,12 @@ export function App() {
                     <TableCell>
                       <div className="grid gap-0.5">
                         <span className="font-medium">{tag.title}</span>
-                        <span className="text-sm text-zinc-500">{tag.id}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {tag.slug}
+                        </span>
                       </div>
                     </TableCell>
-                    <TableCell className="text-zinc-500">
+                    <TableCell className="text-muted-foreground">
                       {tag.amountOfVideos} video(s)
                     </TableCell>
                     <TableCell className="text-right">
